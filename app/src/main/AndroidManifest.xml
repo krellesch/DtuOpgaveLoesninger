@@ -3,6 +3,7 @@
     package="com.example.kristian.dtu.dk.dtuopgaveloesninger">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="24" />
 
     <application
         android:allowBackup="true"

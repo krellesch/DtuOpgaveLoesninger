@@ -12,7 +12,7 @@
         android:id="@+id/txtPass"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="fisse"
+        android:text="tosse"
         android:hint="Password" />
 
     <Button

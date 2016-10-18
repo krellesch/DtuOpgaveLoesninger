@@ -30,7 +30,7 @@ public class FunShitActivity extends Activity {
                     // this need to be done properly, maybe an encryptet file. Or just implement and sql With
                     // table allready filled.
                     EditText pass = (EditText) findViewById(R.id.txtPass);
-                    if(pass.getText().toString().equalsIgnoreCase("fisse")){
+                    if(pass.getText().toString().equalsIgnoreCase("tosse")){
                         Toast.makeText(context,"Ey jeg har savnet dig brormand!",Toast.LENGTH_LONG).show();
                     }
                     Intent youtube = new Intent(context, YoutubeActivity.class);
