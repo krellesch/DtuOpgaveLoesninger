@@ -70,6 +70,8 @@ ArrayList<String> namesList = new ArrayList<String>();
                     Random rand = new Random();
                     TextView winnerName = (TextView) findViewById(R.id.txtV_vinder);
                     // nextInt is normally exclusive of the top value,
+
+                    
                     // so add 1 to make it inclusive
                     if(namesList.size() < 1){winnerName.setText("Vinder: Ingen navne, ingen vinder"); break;}
                     int randomNum = rand.nextInt((namesList.size() - 0));
