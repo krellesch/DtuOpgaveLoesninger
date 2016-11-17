@@ -34,6 +34,8 @@ public class FunShitActivity extends Activity {
                         Intent monkey = new Intent(context, MonkeyExpandableList.class);
                         startActivity(monkey);
                     }
+                    Intent youtube = new Intent(context, YoutubeActivity.class);
+                    startActivity(youtube);
                     break;
             }
         }

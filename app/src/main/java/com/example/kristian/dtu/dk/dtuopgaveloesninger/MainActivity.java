@@ -4,11 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.kristian.dtu.dk.dtuopgaveloesninger.db.DatabaseHandler;
+import com.example.kristian.dtu.dk.dtuopgaveloesninger.model.User;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -18,11 +22,13 @@ public class MainActivity extends AppCompatActivity {
 ArrayList<String> namesList = new ArrayList<String>();
 
     final Context context = this;
+    DatabaseHandler db = new DatabaseHandler(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        DatabaseHandler db = new DatabaseHandler(this);
         Button btn1 = (Button) findViewById(R.id.btn1);
         btn1.setOnClickListener(myHandler);
 
@@ -55,6 +61,7 @@ ArrayList<String> namesList = new ArrayList<String>();
                 case R.id.btnAdd:
                     EditText name = (EditText) findViewById(R.id.txtName);
                     namesList.add(name.getText().toString());
+                    db.addUser(new User(name.getText().toString()));
                     TextView amountOfNames = (TextView) findViewById(R.id.txtV_namesList);
                     amountOfNames.setText("antal navne: "+namesList.size());
                     name.setText("");
@@ -63,8 +70,10 @@ ArrayList<String> namesList = new ArrayList<String>();
                     Random rand = new Random();
                     TextView winnerName = (TextView) findViewById(R.id.txtV_vinder);
                     // nextInt is normally exclusive of the top value,
+
+                    
                     // so add 1 to make it inclusive
-                    if(namesList.size() < 1){winnerName.setText("Vinder: Ingen navne ingen vinder"); break;}
+                    if(namesList.size() < 1){winnerName.setText("Vinder: Ingen navne, ingen vinder"); break;}
                     int randomNum = rand.nextInt((namesList.size() - 0));
                     winnerName.setText("Vinder: "+namesList.get(randomNum));
                     break;

@@ -69,7 +69,7 @@ public class YoutubeActivity extends YouTubeBaseActivity {
 
             @Override
             public void onFinish() {
-                player.pause();
+                //player.pause();
                 time.setText("stopped");
             }
         };
