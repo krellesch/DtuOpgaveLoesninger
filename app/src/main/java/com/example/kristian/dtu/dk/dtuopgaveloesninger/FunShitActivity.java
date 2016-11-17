@@ -31,10 +31,9 @@ public class FunShitActivity extends Activity {
                     // table allready filled.
                     EditText pass = (EditText) findViewById(R.id.txtPass);
                     if(pass.getText().toString().equalsIgnoreCase("fisse")){
-                        Toast.makeText(context,"Ey jeg har savnet dig brormand!",Toast.LENGTH_LONG).show();
+                        Intent monkey = new Intent(context, MonkeyExpandableList.class);
+                        startActivity(monkey);
                     }
-                    Intent youtube = new Intent(context, YoutubeActivity.class);
-                    startActivity(youtube);
                     break;
             }
         }

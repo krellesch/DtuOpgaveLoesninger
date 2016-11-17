@@ -14,6 +14,9 @@
             android:name=".YoutubeActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
+            android:name=".MonkeyExpandableList"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
             android:name=".FunShitActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
